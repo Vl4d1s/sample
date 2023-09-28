@@ -1,0 +1,35 @@
+[
+  {
+    "id": "1",
+    "title": "Object 1",
+    "description": "This is object 1",
+    "location": {
+      "lat": 40.7128,
+      "lng": -74.006
+    },
+    "address": "123 Main Street",
+    "creator": "1"
+  },
+  {
+    "id": "2",
+    "title": "Object 2",
+    "description": "This is object 2",
+    "location": {
+      "lat": 37.7749,
+      "lng": -122.4194
+    },
+    "address": "456 Elm Street",
+    "creator": "1"
+  },
+  {
+    "id": "3",
+    "title": "Object 3",
+    "description": "This is object 3",
+    "location": {
+      "lat": 51.5074,
+      "lng": -0.1278
+    },
+    "address": "789 Oak Street",
+    "creator": "2"
+  }
+]
