@@ -1,38 +1,20 @@
 const express = require("express");
-const placesData = require("./data/places.json");
+const placesController = require("../controllers/places-controller");
 
 const router = express.Router();
 
-router.get("/:pid", (req, res, next) => {
-  const placeId = req.params.pid;
+/**
+ * @route   POST api/v1/places/:pid
+ * @desc    Get a place by ID
+ * @access  Public
+ */
+router.get("/:pid", placesController.getPlaceByPlaceId);
 
-  const place = placesData.find((p) => {
-    return p.id === placeId;
-  });
-
-  if (!place) {
-    const error = new Error("Could not find a place for the provided id.");
-    error.code = 404;
-    throw error;
-  }
-
-  res.json({ place });
-});
-
-router.get("/user/:uid", (req, res, next) => {
-  const userId = req.params.uid;
-
-  const place = placesData.find((p) => {
-    return p.creator === userId;
-  });
-
-  if (!place) {
-    const error = new Error("Could not find a place for the provided user id.");
-    error.code = 404;
-    return next(error);
-  }
-
-  res.json({ place });
-});
+/**
+ * @route   GET api/v1/places/user/:uid
+ * @desc    Get a place by user ID
+ * @access  Public
+ */
+router.get("/user/:uid", placesController.getPlaceByUserId);
 
 module.exports = router;
